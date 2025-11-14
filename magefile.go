@@ -25,6 +25,7 @@ var Aliases = map[string]any{
 	"js":     GenJavaScript,
 	"ts":     GenTypeScript,
 	"swift":  GenSwift,
+	"rust":   GenRust,
 
 	"dep": InstallDepend,
 
@@ -435,6 +436,55 @@ func GenSwift() error {
 	return nil
 }
 
+// Generate Rust code from protobuf files.
+// Note: Requires prost-build or protoc-gen-prost to be installed
+func GenRust() error {
+	log.SetOutput(os.Stdout)
+	// log.SetFlags(log.Lshortfile)
+	log.Println("Generating Rust code from proto files")
+
+	protoc, err := getToolPath("protoc")
+	if err != nil {
+		return err
+	}
+
+	// Check if protoc-gen-prost is available
+	protocGenProst := "protoc-gen-prost"
+	if runtime.GOOS == "windows" {
+		protocGenProst = "protoc-gen-prost.exe"
+	}
+
+	if _, err := exec.LookPath(protocGenProst); err != nil {
+		log.Println("Warning: protoc-gen-prost not found in PATH.")
+		log.Println("Please install it with: cargo install protoc-gen-prost")
+		log.Println("Attempting to use rust_out plugin instead...")
+	}
+
+	for _, module := range protoModules {
+		// Generate in the same directory as proto file (like Go)
+		rustOutDir := filepath.Join(".", module)
+
+		// Use prost plugin to generate in module directory
+		args := []string{
+			"--prost_out=" + rustOutDir,
+			filepath.Join(module, module) + ".proto",
+		}
+
+		cmd := exec.Command(protoc, args...)
+		connectStd(cmd)
+
+		if err := cmd.Run(); err != nil {
+			log.Printf("Error generating Rust code for module %s: %v\n", module, err)
+			log.Printf("Make sure protoc-gen-prost is installed: cargo install protoc-gen-prost\n")
+			continue
+		}
+
+		log.Printf("Successfully generated Rust code for module %s\n", module)
+	}
+
+	return nil
+}
+
 // Generate Harmony JavaScript code from protobuf files.
 // Note: please install pbjs and pbts command first
 // Reference Link: https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fprotobufjs
@@ -450,7 +500,8 @@ func GenHarmonyTS() error {
 	args := []string{
 		"-t", "static-module",
 		"-w", "es6",
-		"-o", outJSFile}
+		"-o", outJSFile,
+	}
 
 	for _, module := range protoModules {
 		protoFile := filepath.Join(module, module) + ".proto"

@@ -1,6 +1,6 @@
 # Generate Protocol Buffers with Mage
 
-Only generate Go and TS pb file in this repo.
+Generate Go, TypeScript, and Rust pb files in this repo.
 
 ## Preconditions
 
@@ -54,6 +54,16 @@ You can use `bootstrap_install_mage.bat` or `bootstrap_install_mage.sh` to insta
 - Execute `npm install ts-proto` to the workdir.
 - Execute `mage GenTypeScript` to generate TypeScript code.
 
+### Rust Generated Code
+
+- Install Rust and Cargo if not already installed. View the [Rust Install Documentation](https://www.rust-lang.org/tools/install).
+- Install `protoc-gen-prost` plugin:
+  ```shell
+  cargo install protoc-gen-prost
+  ```
+- Execute `mage GenRust` to generate Rust code.
+- You can also view the [Prost Documentation](https://github.com/tokio-rs/prost) for more information.
+
 ## Modify the Protocol Buffers
 
 ### Writing Protocol Buffers
@@ -91,7 +101,16 @@ service HelloService {
 - Write your service method. Like `SayHello`.
 - You can also define the parameter message, like `UserInfo`.
 - add the module name to `protoModules` variable in `magefile.go`. In this example, you need append `"hello"` in `protoModules`. We recommend using the module name as the directory name and file name.
-- Execute corresponding languge command to generate protobuf code. More to view [Compiling Your Protocol Buffers](#compiling-your-protocol-buffers).
+- Execute corresponding language command to generate protobuf code. More to view [Compiling Your Protocol Buffers](#compiling-your-protocol-buffers).
+
+**Available commands:**
+- `mage GenGo` or `mage go` - Generate Go code
+- `mage GenTypeScript` or `mage ts` - Generate TypeScript code
+- `mage GenRust` or `mage rust` - Generate Rust code
+- `mage GenJava` or `mage java` - Generate Java code
+- `mage GenKotlin` or `mage kotlin` - Generate Kotlin code
+- `mage GenCSharp` or `mage csharp` - Generate C# code
+- `mage GenSwift` or `mage swift` - Generate Swift code
 
 ## More:
 
