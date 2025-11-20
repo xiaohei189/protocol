@@ -15,107 +15,107 @@
 use std::collections::HashMap;
     /// ContentType
     /// UserRelated.
-    pub const CONTENT_TYPE_BEGIN: i64 = 100;
-    pub const TEXT: i64 = 101;
-    pub const PICTURE: i64 = 102;
-    pub const VOICE: i64 = 103;
-    pub const VIDEO: i64 = 104;
-    pub const FILE: i64 = 105;
-    pub const AT_TEXT: i64 = 106;
-    pub const MERGER: i64 = 107;
-    pub const CARD: i64 = 108;
-    pub const LOCATION: i64 = 109;
-    pub const CUSTOM: i64 = 110;
-    pub const REVOKE: i64 = 111;
-    pub const TYPING: i64 = 113;
-    pub const QUOTE: i64 = 114;
+    pub const CONTENT_TYPE_BEGIN: i32 = 100;
+    pub const TEXT: i32 = 101;
+    pub const PICTURE: i32 = 102;
+    pub const VOICE: i32 = 103;
+    pub const VIDEO: i32 = 104;
+    pub const FILE: i32 = 105;
+    pub const AT_TEXT: i32 = 106;
+    pub const MERGER: i32 = 107;
+    pub const CARD: i32 = 108;
+    pub const LOCATION: i32 = 109;
+    pub const CUSTOM: i32 = 110;
+    pub const REVOKE: i32 = 111;
+    pub const TYPING: i32 = 113;
+    pub const QUOTE: i32 = 114;
 
-    pub const ADVANCED_TEXT: i64 = 117;
-    pub const MARKDOWN_TEXT: i64 = 118;
-    pub const CUSTOM_NOT_TRIGGER_CONVERSATION: i64 = 119;
-    pub const CUSTOM_ONLINE_ONLY: i64 = 120;
-    pub const REACTION_MESSAGE_MODIFIER: i64 = 121;
-    pub const REACTION_MESSAGE_DELETER: i64 = 122;
-    pub const COMMON: i64 = 200;
-    pub const GROUP_MSG: i64 = 201;
-    pub const SIGNAL_MSG: i64 = 202;
-    pub const CUSTOM_NOTIFICATION: i64 = 203;
+    pub const ADVANCED_TEXT: i32 = 117;
+    pub const MARKDOWN_TEXT: i32 = 118;
+    pub const CUSTOM_NOT_TRIGGER_CONVERSATION: i32 = 119;
+    pub const CUSTOM_ONLINE_ONLY: i32 = 120;
+    pub const REACTION_MESSAGE_MODIFIER: i32 = 121;
+    pub const REACTION_MESSAGE_DELETER: i32 = 122;
+    pub const COMMON: i32 = 200;
+    pub const GROUP_MSG: i32 = 201;
+    pub const SIGNAL_MSG: i32 = 202;
+    pub const CUSTOM_NOTIFICATION: i32 = 203;
 
     /// SysRelated.
-    pub const NOTIFICATION_BEGIN: i64 = 1000;
+    pub const NOTIFICATION_BEGIN: i32 = 1000;
 
-    pub const FRIEND_APPLICATION_APPROVED_NOTIFICATION: i64 = 1201; // add_friend_response
-    pub const FRIEND_APPLICATION_REJECTED_NOTIFICATION: i64 = 1202; // add_friend_response
-    pub const FRIEND_APPLICATION_NOTIFICATION: i64 = 1203; // add_friend
-    pub const FRIEND_ADDED_NOTIFICATION: i64 = 1204;
-    pub const FRIEND_DELETED_NOTIFICATION: i64 = 1205; // delete_friend
-    pub const FRIEND_REMARK_SET_NOTIFICATION: i64 = 1206; // set_friend_remark?
-    pub const BLACK_ADDED_NOTIFICATION: i64 = 1207; // add_black
-    pub const BLACK_DELETED_NOTIFICATION: i64 = 1208; // remove_black
-    pub const FRIEND_INFO_UPDATED_NOTIFICATION: i64 = 1209;
-    pub const FRIENDS_INFO_UPDATE_NOTIFICATION: i64 = 1210; // update friend info
+    pub const FRIEND_APPLICATION_APPROVED_NOTIFICATION: i32 = 1201; // add_friend_response
+    pub const FRIEND_APPLICATION_REJECTED_NOTIFICATION: i32 = 1202; // add_friend_response
+    pub const FRIEND_APPLICATION_NOTIFICATION: i32 = 1203; // add_friend
+    pub const FRIEND_ADDED_NOTIFICATION: i32 = 1204;
+    pub const FRIEND_DELETED_NOTIFICATION: i32 = 1205; // delete_friend
+    pub const FRIEND_REMARK_SET_NOTIFICATION: i32 = 1206; // set_friend_remark?
+    pub const BLACK_ADDED_NOTIFICATION: i32 = 1207; // add_black
+    pub const BLACK_DELETED_NOTIFICATION: i32 = 1208; // remove_black
+    pub const FRIEND_INFO_UPDATED_NOTIFICATION: i32 = 1209;
+    pub const FRIENDS_INFO_UPDATE_NOTIFICATION: i32 = 1210; // update friend info
 
-    pub const CONVERSATION_CHANGE_NOTIFICATION: i64 = 1300; // change conversation opt
+    pub const CONVERSATION_CHANGE_NOTIFICATION: i32 = 1300; // change conversation opt
 
-    pub const USER_NOTIFICATION_BEGIN: i64 = 1301;
-    pub const USER_INFO_UPDATED_NOTIFICATION: i64 = 1303; // SetSelfInfoTip = 204
-    pub const USER_STATUS_CHANGE_NOTIFICATION: i64 = 1304;
-    pub const USER_COMMAND_ADD_NOTIFICATION: i64 = 1305;
-    pub const USER_COMMAND_DELETE_NOTIFICATION: i64 = 1306;
-    pub const USER_COMMAND_UPDATE_NOTIFICATION: i64 = 1307;
+    pub const USER_NOTIFICATION_BEGIN: i32 = 1301;
+    pub const USER_INFO_UPDATED_NOTIFICATION: i32 = 1303; // SetSelfInfoTip = 204
+    pub const USER_STATUS_CHANGE_NOTIFICATION: i32 = 1304;
+    pub const USER_COMMAND_ADD_NOTIFICATION: i32 = 1305;
+    pub const USER_COMMAND_DELETE_NOTIFICATION: i32 = 1306;
+    pub const USER_COMMAND_UPDATE_NOTIFICATION: i32 = 1307;
 
-    pub const USER_SUBSCRIBE_ONLINE_STATUS_NOTIFICATION: i64 = 1308;
+    pub const USER_SUBSCRIBE_ONLINE_STATUS_NOTIFICATION: i32 = 1308;
 
-    pub const USER_NOTIFICATION_END: i64 = 1399;
-    pub const OA_NOTIFICATION: i64 = 1400;
+    pub const USER_NOTIFICATION_END: i32 = 1399;
+    pub const OA_NOTIFICATION: i32 = 1400;
 
-    pub const GROUP_NOTIFICATION_BEGIN: i64 = 1500;
+    pub const GROUP_NOTIFICATION_BEGIN: i32 = 1500;
 
-    pub const GROUP_CREATED_NOTIFICATION: i64 = 1501;
-    pub const GROUP_INFO_SET_NOTIFICATION: i64 = 1502;
-    pub const JOIN_GROUP_APPLICATION_NOTIFICATION: i64 = 1503;
-    pub const MEMBER_QUIT_NOTIFICATION: i64 = 1504;
-    pub const GROUP_APPLICATION_ACCEPTED_NOTIFICATION: i64 = 1505;
-    pub const GROUP_APPLICATION_REJECTED_NOTIFICATION: i64 = 1506;
-    pub const GROUP_OWNER_TRANSFERRED_NOTIFICATION: i64 = 1507;
-    pub const MEMBER_KICKED_NOTIFICATION: i64 = 1508;
-    pub const MEMBER_INVITED_NOTIFICATION: i64 = 1509;
-    pub const MEMBER_ENTER_NOTIFICATION: i64 = 1510;
-    pub const GROUP_DISMISSED_NOTIFICATION: i64 = 1511;
-    pub const GROUP_MEMBER_MUTED_NOTIFICATION: i64 = 1512;
-    pub const GROUP_MEMBER_CANCEL_MUTED_NOTIFICATION: i64 = 1513;
-    pub const GROUP_MUTED_NOTIFICATION: i64 = 1514;
-    pub const GROUP_CANCEL_MUTED_NOTIFICATION: i64 = 1515;
-    pub const GROUP_MEMBER_INFO_SET_NOTIFICATION: i64 = 1516;
-    pub const GROUP_MEMBER_SET_TO_ADMIN_NOTIFICATION: i64 = 1517;
-    pub const GROUP_MEMBER_SET_TO_ORDINARY_USER_NOTIFICATION: i64 = 1518;
-    pub const GROUP_INFO_SET_ANNOUNCEMENT_NOTIFICATION: i64 = 1519;
-    pub const GROUP_INFO_SET_NAME_NOTIFICATION: i64 = 1520;
+    pub const GROUP_CREATED_NOTIFICATION: i32 = 1501;
+    pub const GROUP_INFO_SET_NOTIFICATION: i32 = 1502;
+    pub const JOIN_GROUP_APPLICATION_NOTIFICATION: i32 = 1503;
+    pub const MEMBER_QUIT_NOTIFICATION: i32 = 1504;
+    pub const GROUP_APPLICATION_ACCEPTED_NOTIFICATION: i32 = 1505;
+    pub const GROUP_APPLICATION_REJECTED_NOTIFICATION: i32 = 1506;
+    pub const GROUP_OWNER_TRANSFERRED_NOTIFICATION: i32 = 1507;
+    pub const MEMBER_KICKED_NOTIFICATION: i32 = 1508;
+    pub const MEMBER_INVITED_NOTIFICATION: i32 = 1509;
+    pub const MEMBER_ENTER_NOTIFICATION: i32 = 1510;
+    pub const GROUP_DISMISSED_NOTIFICATION: i32 = 1511;
+    pub const GROUP_MEMBER_MUTED_NOTIFICATION: i32 = 1512;
+    pub const GROUP_MEMBER_CANCEL_MUTED_NOTIFICATION: i32 = 1513;
+    pub const GROUP_MUTED_NOTIFICATION: i32 = 1514;
+    pub const GROUP_CANCEL_MUTED_NOTIFICATION: i32 = 1515;
+    pub const GROUP_MEMBER_INFO_SET_NOTIFICATION: i32 = 1516;
+    pub const GROUP_MEMBER_SET_TO_ADMIN_NOTIFICATION: i32 = 1517;
+    pub const GROUP_MEMBER_SET_TO_ORDINARY_USER_NOTIFICATION: i32 = 1518;
+    pub const GROUP_INFO_SET_ANNOUNCEMENT_NOTIFICATION: i32 = 1519;
+    pub const GROUP_INFO_SET_NAME_NOTIFICATION: i32 = 1520;
 
     // SignalingNotificationBegin = 1600
     // SignalingNotification = 1601
     // SignalingNotificationEnd = 1649
 
-    pub const SUPER_GROUP_NOTIFICATION_BEGIN: i64 = 1650;
-    pub const SUPER_GROUP_UPDATE_NOTIFICATION: i64 = 1651;
-    pub const MSG_DELETE_NOTIFICATION: i64 = 1652;
-    pub const SUPER_GROUP_NOTIFICATION_END: i64 = 1699;
+    pub const SUPER_GROUP_NOTIFICATION_BEGIN: i32 = 1650;
+    pub const SUPER_GROUP_UPDATE_NOTIFICATION: i32 = 1651;
+    pub const MSG_DELETE_NOTIFICATION: i32 = 1652;
+    pub const SUPER_GROUP_NOTIFICATION_END: i32 = 1699;
 
-    pub const CONVERSATION_PRIVATE_CHAT_NOTIFICATION: i64 = 1701;
-    pub const CONVERSATION_UNREAD_NOTIFICATION: i64 = 1702;
-    pub const CLEAR_CONVERSATION_NOTIFICATION: i64 = 1703;
-    pub const CONVERSATION_DELETE_NOTIFICATION: i64 = 1704;
+    pub const CONVERSATION_PRIVATE_CHAT_NOTIFICATION: i32 = 1701;
+    pub const CONVERSATION_UNREAD_NOTIFICATION: i32 = 1702;
+    pub const CLEAR_CONVERSATION_NOTIFICATION: i32 = 1703;
+    pub const CONVERSATION_DELETE_NOTIFICATION: i32 = 1704;
 
-    pub const BUSINESS_NOTIFICATION_BEGIN: i64 = 2000;
-    pub const BUSINESS_NOTIFICATION: i64 = 2001;
-    pub const BUSINESS_NOTIFICATION_END: i64 = 2099;
+    pub const BUSINESS_NOTIFICATION_BEGIN: i32 = 2000;
+    pub const BUSINESS_NOTIFICATION: i32 = 2001;
+    pub const BUSINESS_NOTIFICATION_END: i32 = 2099;
 
-    pub const MSG_REVOKE_NOTIFICATION: i64 = 2101;
-    pub const DELETE_MSGS_NOTIFICATION: i64 = 2102;
+    pub const MSG_REVOKE_NOTIFICATION: i32 = 2101;
+    pub const DELETE_MSGS_NOTIFICATION: i32 = 2102;
 
-    pub const HAS_READ_RECEIPT: i64 = 2200;
+    pub const HAS_READ_RECEIPT: i32 = 2200;
 
-    pub const NOTIFICATION_END: i64 = 5000;
+    pub const NOTIFICATION_END: i32 = 5000;
 
     /// status.
     pub const MSG_NORMAL: i32 = 1;
@@ -199,9 +199,9 @@ use std::collections::HashMap;
     pub const JOIN_BY_QR_CODE: i32 = 4;
 
     /// Minio.
-    pub const MINIO_DURATION_TIMES: i64 = 3600;
+    pub const MINIO_DURATION_TIMES: i32 = 3600;
     /// Aws.
-    pub const AWS_DURATION_TIMES: i64 = 3600;
+    pub const AWS_DURATION_TIMES: i32 = 3600;
 
     /// callbackCommand.
     pub const CALLBACK_BEFORE_SEND_SINGLE_MSG_COMMAND: &str = "callbackBeforeSendSingleMsgCommand";
@@ -258,7 +258,7 @@ use std::collections::HashMap;
     pub const GROUP_NOTIFICATION: i32 = 4;
 
     lazy_static::lazy_static! {
-        pub static ref CONTENT_TYPE_2_PUSH_CONTENT: HashMap<i64, &'static str> = {
+        pub static ref CONTENT_TYPE_2_PUSH_CONTENT: HashMap<i32, &'static str> = {
             let mut m = HashMap::new();
             m.insert(PICTURE, "[PICTURE]");
             m.insert(VOICE, "[VOICE]");
