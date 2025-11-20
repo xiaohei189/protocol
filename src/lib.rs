@@ -54,6 +54,12 @@ pub mod user {
     include!(concat!(env!("OUT_DIR"), "/openim.user.rs"));
 }
 
+pub mod constant {
+    include!("../constant/constant.rs");
+}
+
+
+
 // 导出 protobuf 基础类型（wrapperspb）
 pub mod protobuf {
     include!(concat!(env!("OUT_DIR"), "/openim.protobuf.rs"));

@@ -26,7 +26,7 @@ fn main() {
     prost_build::compile_protos(&proto_files, &["."]).expect("Failed to compile protos");
 
     // 设置重新编译触发条件
-    for module in proto_modules {
+    for module in &proto_modules {
         println!("cargo:rerun-if-changed={}/{}.proto", module, module);
     }
 }
