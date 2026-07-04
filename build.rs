@@ -44,6 +44,16 @@ fn main() {
         config.type_attribute(message, "#[serde(rename_all = \"camelCase\")]");
     }
 
+    // 为 bridge 类型添加 flutter_rust_bridge non_opaque，使 FRB 生成非 opaque 的 Dart 类型
+    config.type_attribute(
+        "openim.sdkws.MsgData",
+        "#[flutter_rust_bridge::frb(non_opaque)]",
+    );
+    config.type_attribute(
+        "openim.sdkws.OfflinePushInfo",
+        "#[flutter_rust_bridge::frb(non_opaque)]",
+    );
+
     // 为 sdkws 模块的特殊字段配置 JSON 字段名映射（覆盖 camelCase 规则）
     // 这些字段需要 ID/URL 等全大写，而不是 camelCase
 
