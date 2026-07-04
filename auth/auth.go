@@ -17,7 +17,7 @@ func (x *ForceLogoutReq) Check() error {
 	if x.UserID == "" {
 		return errors.New("userID is empty")
 	}
-	if x.PlatformID > constant.AdminPlatformID || x.PlatformID < constant.IOSPlatformID {
+	if x.PlatformID > constant.BotPlatformID || x.PlatformID < constant.IOSPlatformID {
 		return errors.New("platformID is invalidate")
 	}
 	return nil

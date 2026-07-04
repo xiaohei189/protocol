@@ -15,6 +15,7 @@ const (
 	IPadPlatformID       = 9
 	AdminPlatformID      = 10
 	HarmonyOSPlatformID  = 11
+	BotPlatformID        = 12
 
 	// Platform string match to Platform ID.
 	IOSPlatformStr        = "IOS"
@@ -28,6 +29,7 @@ const (
 	IPadPlatformStr       = "IPad"
 	AdminPlatformStr      = "Admin"
 	HarmonyOSPlatformStr  = "HarmonyOS"
+	BotPlatformStr        = "Bot"
 
 	// terminal types.
 	TerminalPC     = "PC"
@@ -47,6 +49,7 @@ var PlatformID2Name = map[int]string{
 	IPadPlatformID:       IPadPlatformStr,
 	AdminPlatformID:      AdminPlatformStr,
 	HarmonyOSPlatformID:  HarmonyOSPlatformStr,
+	BotPlatformID:        BotPlatformStr,
 }
 
 var PlatformName2ID = map[string]int{
@@ -61,6 +64,7 @@ var PlatformName2ID = map[string]int{
 	IPadPlatformStr:       IPadPlatformID,
 	AdminPlatformStr:      AdminPlatformID,
 	HarmonyOSPlatformStr:  HarmonyOSPlatformID,
+	BotPlatformStr:        BotPlatformID,
 }
 
 var PlatformName2class = map[string]string{
@@ -75,6 +79,7 @@ var PlatformName2class = map[string]string{
 	IPadPlatformStr:       TerminalPad,
 	AdminPlatformStr:      AdminPlatformStr,
 	HarmonyOSPlatformStr:  HarmonyOSPlatformStr,
+	BotPlatformStr:        BotPlatformStr,
 }
 
 var PlatformID2class = map[int]string{
@@ -89,6 +94,7 @@ var PlatformID2class = map[int]string{
 	IPadPlatformID:       TerminalPad,
 	AdminPlatformID:      AdminPlatformStr,
 	HarmonyOSPlatformID:  HarmonyOSPlatformStr,
+	BotPlatformID:        BotPlatformStr,
 }
 
 func PlatformIDToName(num int) string {

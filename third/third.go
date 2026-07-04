@@ -7,7 +7,7 @@ import (
 )
 
 func (x *FcmUpdateTokenReq) Check() error {
-	if x.PlatformID > constant.AdminPlatformID || x.PlatformID < constant.IOSPlatformID {
+	if x.PlatformID > constant.BotPlatformID || x.PlatformID < constant.IOSPlatformID {
 		return errors.New("platformID is invalidate")
 	}
 	if x.FcmToken == "" {
