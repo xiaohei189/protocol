@@ -27,6 +27,8 @@ fn main() {
     // 配置 prost-build，添加 serde 支持
     let mut config = Config::new();
 
+    // 注：prost::Message derive 宏内部已自动实现 Debug，无需额外添加
+
     // 为所有类型添加 serde 支持，使用 camelCase 作为默认命名规则
     let messages = vec![
         "openim.sdkws.FriendInfo",
