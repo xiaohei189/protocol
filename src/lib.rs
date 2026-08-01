@@ -58,8 +58,6 @@ pub mod constant {
     include!("../constant/constant.rs");
 }
 
-
-
 // 导出 protobuf 基础类型（wrapperspb）
 pub mod protobuf {
     include!(concat!(env!("OUT_DIR"), "/openim.protobuf.rs"));
@@ -71,4 +69,3 @@ pub use protobuf as wrapperspb;
 // 重新导出 prost，方便使用
 pub use prost;
 pub use prost::Message;
-
